@@ -1,0 +1,71 @@
+<!-- 
+  Name: Hamza Al Najjar
+  Course: INST377
+  Lab: 3
+  Date: September 21, 2025
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>INST377 Lab 3 — Rock • Paper • Scissors</title>
+  <!-- external CSS (required by rubric) -->
+  <link rel="stylesheet" href="alnajjar_lab3.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <!-- header + footer share same class for identical styling -->
+  <header class="bar">
+    <h1>Lab 3 — Rock • Paper • Scissors</h1>
+  </header>
+
+  <!-- nav: 3 items, horizontal, no bullets, open new tab -->
+  <nav class="main-nav">
+    <ul>
+      <li><a href="https://www.testudo.umd.edu/" target="_blank" rel="noopener">Testudo</a></li>
+      <li><a href="https://www.tableau.com/" target="_blank" rel="noopener">Tableau</a></li>
+      <li><a href="https://developer.mozilla.org/" target="_blank" rel="noopener">MDN</a></li>
+    </ul>
+  </nav>
+
+  <!-- two-column layout kept on one line via flex -->
+  <div class="content">
+    <!-- main uses % width (rubric) -->
+    <main class="main-body">
+      <h2>Play a round</h2>
+
+      <!-- form: name required, select R/P/S -->
+      <form onsubmit="return false" aria-label="Rock Paper Scissors form">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" required aria-required="true" placeholder="Enter your name" />
+
+        <label for="choice">Your choice</label>
+        <select id="choice" name="choice">
+          <option value="rock">Rock</option>
+          <option value="paper">Paper</option>
+          <option value="scissors">Scissors</option>
+        </select>
+
+        <button type="submit">Let's Play!</button>
+      </form>
+    </main>
+
+    <!-- sidebar uses % width, different bg color -->
+    <aside class="sidebar" aria-label="Game rules">
+      <h2>Rules</h2>
+      <ul>
+        <li>Rock beats Scissors</li>
+        <li>Scissors beats Paper</li>
+        <li>Paper beats Rock</li>
+      </ul>
+      <p>Best played with honesty and good vibes 😄</p>
+    </aside>
+  </div>
+
+  <footer class="bar">
+    <p>Created by <strong>Hamza Al Najjar</strong> — INST377 Lab 3</p>
+  </footer>
+</body>
+</html>

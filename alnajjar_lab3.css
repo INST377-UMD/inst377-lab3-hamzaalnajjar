@@ -1,0 +1,122 @@
+/* 
+  Name: Hamza Al Najjar
+  Course: INST377
+  Lab: 3
+  Date: September 21, 2025
+*/
+
+/* page-wide font + base color (body color must differ from header/footer) */
+:root{
+  --ink:#182230;
+  --bg:#f4efe7;         /* soft warm background */
+  --bar:#263d7a;        /* header/footer blue */
+  --nav:#3256c1;        /* nav base */
+  --nav-hover:#c47a1c;  /* nav hover */
+  --main:#d9f1ea;       /* main content bg */
+  --side:#ffdca8;       /* sidebar bg */
+  --side-hover:#ffe9c7; /* sidebar hover bg */
+  --border:#1f2937;
+}
+
+*{ box-sizing:border-box; }
+
+body{
+  margin:0;
+  color:var(--ink);
+  background:var(--bg);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* custom font-family (rubric) */
+  line-height:1.5;
+}
+
+/* header + footer share class "bar" (same styling, centered text, padding/margin) */
+.bar{
+  background:var(--bar);
+  color:#fff;
+  text-align:center;         /* centered text  */
+  padding:12px 16px;         /* padding required */
+  margin:8px;                /* margin required */
+  border-radius:8px;
+}
+
+/* NAV: no bullets, horizontal, hover state, open new tab handled in HTML */
+.main-nav{
+  background:var(--nav);
+  color:#fff;
+  margin:8px 8px 0 8px;
+  border-radius:8px;
+}
+.main-nav ul{
+  margin:0;
+  padding:0 8px;
+  display:flex;              /* horizontal line-up  */
+  gap:8px;
+  list-style:none;           /* remove bullets */
+}
+.main-nav li a{
+  display:block;
+  padding:10px 14px;
+  color:#fff;
+  text-decoration:none;
+  border-radius:6px;
+}
+.main-nav li a:hover{
+  background:var(--nav-hover);  /* hover state  */
+}
+
+/* two columns on one line */
+.content{
+  display:flex;                /* keeps main + sidebar on same line  */
+  gap:12px;
+  padding:12px 8px;
+}
+
+/* MAIN: percentage width + own color + margin+padding */
+.main-body{
+  width:68%;                   /* percentage width  */
+  background:var(--main);      /* different from page and sidebar */
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:14px;                /* padding  */
+}
+
+/* input focus grows width, then returns when unfocused */
+#name{
+  width:52%;
+  max-width:420px;
+  padding:8px 10px;
+  transition:width .2s ease;   /* smooth change */
+  border:1px solid #93a3b8;
+  border-radius:6px;
+}
+#name:focus{
+  width:72%;                   /* grows on focus  */
+  outline:2px solid #7aa2ff;
+  outline-offset:2px;
+}
+
+select, button{
+  padding:8px 10px;
+  border-radius:6px;
+  border:1px solid #93a3b8;
+  margin-left:8px;
+}
+button{
+  cursor:pointer;
+}
+
+/* SIDEBAR: percentage width, different color, margin + padding; hover changes bg */
+.sidebar{
+  width:28%;                   /* percentage width  */
+  background:var(--side);      /* distinct color  */
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:14px;                /* padding  */
+}
+.sidebar:hover{
+  background:var(--side-hover);/* hover color change  */
+}
+
+@media (max-width: 800px){
+  .content{ flex-direction:column; }
+  .main-body, .sidebar{ width:100%; }
+}
